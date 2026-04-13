@@ -1,0 +1,17 @@
+# Data files (too large for git / must be downloaded from Kaggle)
+src_data/data-final.csv
+src_data/data_short.*
+
+# Output
+output_data/
+
+# R session / artifacts
+.Rhistory
+Rplots.pdf
+.RData
+.Rproj.user/
+*.Rproj
+
+# OS
+.DS_Store
+Thumbs.db
