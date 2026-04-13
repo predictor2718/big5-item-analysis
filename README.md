@@ -4,7 +4,7 @@ Psychometric analysis of the 50-item [IPIP Big Five Factor Markers](https://open
 
 <p align="center">
   <img src="figures/fa_network.png" width="48%" alt="Item Correlation Network"/>
-  <img src="figures/fa_heatmap.png" width="48%" alt="Factor Loadings Heatmap"/>
+  <img src="figures/fa_loadings.png" width="48%" alt="Factor Loadings"/>
 </p>
 
 <p align="center">
