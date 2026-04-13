@@ -16,7 +16,8 @@ required_packages <- c(
   "scales",     # axis formatting
   "ggrepel",    # non-overlapping labels
   "psych",      # factor analysis, reliability
-  "nFactors"    # parallel analysis
+  "nFactors",   # parallel analysis
+  "qgraph"      # network visualization
 )
 
 cat("Checking and installing required packages...\n")

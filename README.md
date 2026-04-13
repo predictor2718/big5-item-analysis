@@ -1,6 +1,17 @@
-# R Seminar: Big Five Personality Test - Item Analysis
+# Big Five Personality Test: Item & Scale Analysis
 
-Workshop materials for an introductory R seminar aimed at psychology students and researchers. The seminar covers data handling, descriptive statistics, item analysis, visualization, factor analysis, and reliability analysis using the [IPIP Big Five Factor Markers](https://openpsychometrics.org/tests/IPIP-BFFM/) dataset.
+Psychometric analysis of the 50-item [IPIP Big Five Factor Markers](https://openpsychometrics.org/tests/IPIP-BFFM/) questionnaire in R, including item statistics, factor analysis, and reliability estimation.
+
+<p align="center">
+  <img src="figures/fa_network.png" width="48%" alt="Item Correlation Network"/>
+  <img src="figures/fa_heatmap.png" width="48%" alt="Factor Loadings Heatmap"/>
+</p>
+
+<p align="center">
+  <img src="figures/dimcorrelation.png" width="32%" alt="Scale Intercorrelations"/>
+  <img src="figures/totCorr-EXT.png" width="32%" alt="Item Difficulty vs. Discrimination"/>
+  <img src="figures/reliability.png" width="32%" alt="Reliability"/>
+</p>
 
 ## Data
 
@@ -24,30 +35,33 @@ kaggle datasets download -d tunguz/big-five-personality-test -p src_data/ --unzi
 
 The scripts are meant to be run in order. Each script sources its dependencies automatically.
 
-| Script | Topic | Content |
-|--------|-------|---------|
-| `0.intro.R` | Quick Start | Load data, basic file I/O |
-| `1.files.R` | File Handling | Read/write CSV, Excel (.xlsx), SPSS (.sav) |
-| `2.datascience.R` | Data Wrangling | tidyr, dplyr, item recoding, descriptive statistics, item-total correlations |
-| `3.ggplot.R` | Visualization | Histograms, correlation heatmaps, item difficulty-discrimination plots |
-| `4.psych.R` | Psychometrics | Factor analysis, parallel analysis, reliability (Cronbach's alpha, split-half) |
-| `5.anova.R` | Group Comparisons | *(planned)* |
+| Script | Content |
+|--------|---------|
+| `01_data_preparation.R` | Load data, define item metadata, recode negatively keyed items, compute scale scores |
+| `02_item_analysis.R` | Item descriptives, item histograms, corrected item-total correlations, difficulty-discrimination plots |
+| `03_scale_analysis.R` | Dimension descriptives & histograms, scale intercorrelations, exploratory factor analysis (heatmap, network), parallel analysis, reliability |
 
 ## Big Five Dimensions
 
 | Code | Dimension | Items |
 |------|-----------|-------|
-| EXT | Extraversion | EXT1-EXT10 |
-| EST | Emotional Stability | EST1-EST10 |
-| AGR | Agreeableness | AGR1-AGR10 |
-| CSN | Conscientiousness | CSN1-CSN10 |
-| OPN | Openness | OPN1-OPN10 |
+| EXT | Extraversion | EXT1 -- EXT10 |
+| EST | Emotional Stability | EST1 -- EST10 |
+| AGR | Agreeableness | AGR1 -- AGR10 |
+| CSN | Conscientiousness | CSN1 -- CSN10 |
+| OPN | Openness | OPN1 -- OPN10 |
 
-Negatively keyed items are recoded in `2.datascience.R`.
+Negatively keyed items are recoded in `01_data_preparation.R`.
 
 ## Required R Packages
 
-openxlsx, haven, tidyr, dplyr, moments, ggplot2, Hmisc, scales, ggrepel, psych, nFactors
+tidyr, dplyr, moments, ggplot2, ggrepel, scales, Hmisc, psych, nFactors, qgraph
+
+Install all at once via `setup.R` or manually:
+```r
+install.packages(c("tidyr", "dplyr", "moments", "ggplot2", "ggrepel",
+                    "scales", "Hmisc", "psych", "nFactors", "qgraph"))
+```
 
 ## License
 
