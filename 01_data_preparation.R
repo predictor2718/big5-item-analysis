@@ -41,11 +41,11 @@ itemdata <- (currentdata
 
 ### recode negatively keyed items (5 - value)
 itemdata <- (itemdata
-  %>% mutate(value = ifelse(itemid %in% c("EXT2","EXT4","EXT6","EXT8","EXT10"), 5 - value, value))
-  %>% mutate(value = ifelse(itemid %in% c("EST2","EST4"), 5 - value, value))
-  %>% mutate(value = ifelse(itemid %in% c("AGR1","AGR3","AGR5","AGR7"), 5 - value, value))
-  %>% mutate(value = ifelse(itemid %in% c("CSN2","CSN4","CSN6","CSN8"), 5 - value, value))
-  %>% mutate(value = ifelse(itemid %in% c("OPN2","OPN4","OPN6"), 5 - value, value))
+  %>% mutate(value = ifelse(itemid %in% c("EXT2", "EXT4", "EXT6", "EXT8", "EXT10"), 5 - value, value))
+  %>% mutate(value = ifelse(itemid %in% c("EST2", "EST4"), 5 - value, value))
+  %>% mutate(value = ifelse(itemid %in% c("AGR1", "AGR3", "AGR5", "AGR7"), 5 - value, value))
+  %>% mutate(value = ifelse(itemid %in% c("CSN2", "CSN4", "CSN6", "CSN8"), 5 - value, value))
+  %>% mutate(value = ifelse(itemid %in% c("OPN2", "OPN4", "OPN6"), 5 - value, value))
 )
 
 ### compute scale scores per person and dimension
